@@ -6,7 +6,7 @@
     • Code-base(SnapKit + Then)
     • Pr, Issue, Merge(Code Review), Branch 사용
 
-### 📮 Commit Message
+### 🏷 Commit Message
 - `[Add]` 기능 외에 추가사항 (파일, 프로토콜, 익스텐션 등)  
 - `[Del]` 파일, 에셋 삭제
 - `[Feat]` 새로운 기능 추가
@@ -18,5 +18,10 @@
 <br>
 
 # 📚 To Do List
-    • 수정 → Label 추가, 초기 README 작업
-    • 지석 → 초기 프로젝트 설정, 디스코드 연동
+### 👩🏻‍💻 수정 
+1. Label 추가 
+2. 초기 README 작업  
+
+### 🧑🏻‍💻 지석 
+1. 초기 프로젝트 설정
+2. 디스코드 & Git 연동
