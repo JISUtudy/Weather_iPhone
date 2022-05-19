@@ -11,9 +11,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
+        
+        configureNav()
     }
 
 
+    
+    // MARK: - Functions
+    
+    private func configureNav() {
+        
+        navigationItem.title = "날씨"
+
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    
 }
 
