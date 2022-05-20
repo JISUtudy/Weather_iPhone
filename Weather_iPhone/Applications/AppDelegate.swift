@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = .black
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             
+            UINavigationBar.appearance().prefersLargeTitles = true
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
             
