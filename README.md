@@ -18,10 +18,12 @@
 <br>
 
 # 📚 To Do List
+> ~ 5/31(UI 구성)
 ### 👩🏻‍💻 수정 
-    1. Label 추가 
-    2. 초기 README 작업  
+    • TableView Cell
+    • TableView Footer Cell
 
 ### 🧑🏻‍💻 지석 
-    1. 초기 프로젝트 설정
-    2. 디스코드 & Git 연동
+    • UINavigation Right Button
+    • Text View
+    • TableView Configure
