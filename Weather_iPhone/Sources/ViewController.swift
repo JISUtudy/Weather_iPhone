@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,8 @@ class ViewController: UIViewController {
 
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = false
+        
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: ., target: self, action: #selector())
     }
     
 }
