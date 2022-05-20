@@ -18,9 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .white
+            appearance.backgroundColor = .black
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            
         }
         
         return true
