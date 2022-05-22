@@ -11,12 +11,21 @@ import SnapKit
 class ViewController: UIViewController {
     
     
-
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         
         configureNav()
+    }
+    
+    
+    // MARK: - Selector
+    
+    @objc func handleMenu() {
+        print("DEBUG: Nav Right button tapped")
     }
 
 
@@ -29,8 +38,9 @@ class ViewController: UIViewController {
 
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = .white
         
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: ., target: self, action: #selector())
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(handleMenu))
     }
     
 }
