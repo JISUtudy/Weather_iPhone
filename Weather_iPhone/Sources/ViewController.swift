@@ -10,6 +10,7 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Properties
     
     
     // MARK: - Lifecycle
@@ -39,6 +40,11 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = .white
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "도시 또는 공항 검색"
+        self.navigationItem.searchController = searchController
+        
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(handleMenu))
     }
