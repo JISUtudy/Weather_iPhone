@@ -10,7 +10,7 @@
 		9AA330249ACD6C6F067A5A99 /* Pods_Weather_iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3B587B7D6FA0E3B2138233 /* Pods_Weather_iPhone.framework */; };
 		B65360D72834CD440057981C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65360D62834CD440057981C /* AppDelegate.swift */; };
 		B65360D92834CD440057981C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65360D82834CD440057981C /* SceneDelegate.swift */; };
-		B65360DB2834CD440057981C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65360DA2834CD440057981C /* ViewController.swift */; };
+		B65360DB2834CD440057981C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65360DA2834CD440057981C /* MainViewController.swift */; };
 		B65360E02834CD450057981C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65360DF2834CD450057981C /* Assets.xcassets */; };
 		B65360E32834CD450057981C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65360E12834CD450057981C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -22,7 +22,7 @@
 		B65360D32834CD440057981C /* Weather_iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather_iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65360D62834CD440057981C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B65360D82834CD440057981C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B65360DA2834CD440057981C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B65360DA2834CD440057981C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B65360DF2834CD450057981C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65360E22834CD450057981C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65360E42834CD450057981C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,7 +88,8 @@
 		B65360EA2834CD500057981C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B65360DA2834CD440057981C /* ViewController.swift */,
+				B661FEB2283E279B0054A26D /* View */,
+				B661FEB1283E27900054A26D /* Controller */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -110,6 +111,21 @@
 				B65360E42834CD450057981C /* Info.plist */,
 			);
 			path = Applications;
+			sourceTree = "<group>";
+		};
+		B661FEB1283E27900054A26D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B65360DA2834CD440057981C /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B661FEB2283E279B0054A26D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65360DB2834CD440057981C /* ViewController.swift in Sources */,
+				B65360DB2834CD440057981C /* MainViewController.swift in Sources */,
 				B65360D72834CD440057981C /* AppDelegate.swift in Sources */,
 				B65360D92834CD440057981C /* SceneDelegate.swift in Sources */,
 			);
