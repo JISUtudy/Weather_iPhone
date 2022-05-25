@@ -14,6 +14,7 @@
 		B65360E02834CD450057981C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65360DF2834CD450057981C /* Assets.xcassets */; };
 		B65360E32834CD450057981C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65360E12834CD450057981C /* LaunchScreen.storyboard */; };
 		DDDE497C283E393E00E3E2B0 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */; };
+		DDF0AAA2283E6F8300C2BD14 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DDF0AAA1283E6F8300C2BD14 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA330249ACD6C6F067A5A99 /* Pods_Weather_iPhone.framework in Frameworks */,
+				DDF0AAA2283E6F8300C2BD14 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +151,9 @@
 			dependencies = (
 			);
 			name = Weather_iPhone;
+			packageProductDependencies = (
+				DDF0AAA1283E6F8300C2BD14 /* Then */,
+			);
 			productName = Weather_iPhone;
 			productReference = B65360D32834CD440057981C /* Weather_iPhone.app */;
 			productType = "com.apple.product-type.application";
@@ -177,6 +182,9 @@
 				Base,
 			);
 			mainGroup = B65360CA2834CD440057981C;
+			packageReferences = (
+				DDF0AAA0283E6F8300C2BD14 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = B65360D42834CD440057981C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -460,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDF0AAA0283E6F8300C2BD14 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDF0AAA1283E6F8300C2BD14 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF0AAA0283E6F8300C2BD14 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B65360CB2834CD440057981C /* Project object */;
 }
