@@ -13,6 +13,7 @@
 		B65360DB2834CD440057981C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65360DA2834CD440057981C /* MainViewController.swift */; };
 		B65360E02834CD450057981C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65360DF2834CD450057981C /* Assets.xcassets */; };
 		B65360E32834CD450057981C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65360E12834CD450057981C /* LaunchScreen.storyboard */; };
+		DDDE497C283E393E00E3E2B0 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B65360DF2834CD450057981C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65360E22834CD450057981C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65360E42834CD450057981C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTableViewCell.swift; path = Weather_iPhone/Sources/WeatherTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		B661FEB2283E279B0054A26D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDE497C283E393E00E3E2B0 /* WeatherTableViewCell.swift in Sources */,
 				B65360DB2834CD440057981C /* MainViewController.swift in Sources */,
 				B65360D72834CD440057981C /* AppDelegate.swift in Sources */,
 				B65360D92834CD440057981C /* SceneDelegate.swift in Sources */,

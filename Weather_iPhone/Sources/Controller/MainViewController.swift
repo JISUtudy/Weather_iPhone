@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     private lazy var weatherTableView: UITableView = {
         let tv = UITableView()
-        tv.backgroundColor = .darkGray
+        tv.backgroundColor = .clear
         return tv
     }()
     
@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .clear
         
         configureNav()
         configureUI()
@@ -45,9 +45,17 @@ class MainViewController: UIViewController {
         view.addSubview(weatherTableView)
         
         weatherTableView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(24)
         }
+        // Cell 등록
+        weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        // tableView 경계선 없애기
+        weatherTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        // 스크롤 인디케이터 없애기
+        weatherTableView.showsVerticalScrollIndicator = false
+        // tableView 높이 설정
+        weatherTableView.rowHeight = 130
     }
     
     private func configureNav() {
@@ -68,18 +76,29 @@ class MainViewController: UIViewController {
     
 }
 
-
-
 // MARK: UITableViewDelegate
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
+    
+        cell.contentView.backgroundColor = .darkGray
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        
+        cell.myLocationLabel.text = "나의 위치"
+        cell.myCurrentLocationLabel.text = "계양구"
+        cell.weatherLabel.text = "한때 흐림"
+        cell.temperatureLabel.text = "17º"
+        cell.highestTemperatureLabel.text = "최고:17º"
+        cell.lowestTemperatureLabel.text = "최저:13º"
+
+        return cell
     }
     
     
