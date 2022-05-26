@@ -15,6 +15,10 @@ class MainViewController: UIViewController {
     private lazy var weatherTableView: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = .clear
+        tv.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        tv.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        tv.showsVerticalScrollIndicator = false
+        tv.rowHeight = 130
         return tv
     }()
     
@@ -48,14 +52,6 @@ class MainViewController: UIViewController {
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(24)
         }
-        // Cell 등록
-        weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
-        // tableView 경계선 없애기
-        weatherTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-        // 스크롤 인디케이터 없애기
-        weatherTableView.showsVerticalScrollIndicator = false
-        // tableView 높이 설정
-        weatherTableView.rowHeight = 130
     }
     
     private func configureNav() {
@@ -86,17 +82,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
-    
-        cell.contentView.backgroundColor = .darkGray
-        cell.selectionStyle = .none
-        cell.backgroundColor = .clear
-        
-        cell.myLocationLabel.text = "나의 위치"
-        cell.myCurrentLocationLabel.text = "계양구"
-        cell.weatherLabel.text = "한때 흐림"
-        cell.temperatureLabel.text = "17º"
-        cell.highestTemperatureLabel.text = "최고:17º"
-        cell.lowestTemperatureLabel.text = "최저:13º"
 
         return cell
     }
