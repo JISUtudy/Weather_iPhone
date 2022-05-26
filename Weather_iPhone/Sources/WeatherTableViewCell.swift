@@ -14,29 +14,49 @@ class WeatherTableViewCell: UITableViewCell {
     
     static let identifier = "WeatherTableViewCell"
     
-    var myLocationLabel = UILabel()
-    var myCurrentLocationLabel = UILabel()
-    var weatherLabel = UILabel()
-    var temperatureLabel = UILabel()
-    var highestTemperatureLabel = UILabel()
-    var lowestTemperatureLabel = UILabel()
+    lazy var myLocationLabel: UILabel = {
+        var label = UILabel()
+        label.setFontColor(text: "나의 위치", font: .boldSystemFont(ofSize: 23), color: .white)
+        return label
+    }()
+    
+    lazy var myCurrentLocationLabel: UILabel = {
+        var label = UILabel()
+        label.setFontColor(text: "계양구", font: .boldSystemFont(ofSize: 15), color: .white)
+        return label
+    }()
+    
+    lazy var weatherLabel: UILabel = {
+        var label = UILabel()
+        label.setFontColor(text: "한때 흐림", font: .boldSystemFont(ofSize: 15), color: .white)
+        return label
+    }()
+    
+    lazy var temperatureLabel: UILabel = {
+        var label = UILabel()
+        label.setFontColor(text: "17º", font: .boldSystemFont(ofSize: 40), color: .white)
+        return label
+    }()
+    
+    lazy var highestTemperatureLabel: UILabel = {
+        var label = UILabel()
+        label.setFontColor(text: "최고:17º", font: .boldSystemFont(ofSize: 15), color: .white)
+        return label
+    }()
+    
+    lazy var lowestTemperatureLabel: UILabel = {
+        var label = UILabel()
+        label.setFontColor(text: "최저:13º", font: .boldSystemFont(ofSize: 15), color: .white)
+        return label
+    }()
 
     // MARK: - Lifecycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addContentView()
         autoLayout()
-        labelStyle()
     }
     
     // Inside UITableViewCell subclass
@@ -45,6 +65,9 @@ class WeatherTableViewCell: UITableViewCell {
         
         self.contentView.clipsToBounds = true
         self.contentView.layer.cornerRadius = 20
+        self.contentView.backgroundColor = .darkGray
+        self.selectionStyle = .none
+        self.backgroundColor = .clear
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
     }
@@ -88,20 +111,5 @@ class WeatherTableViewCell: UITableViewCell {
             $0.right.equalTo(lowestTemperatureLabel.snp.left).offset(-5)
             $0.bottom.equalTo(lowestTemperatureLabel.snp.bottom)
         }
-    }
-    
-    private func labelStyle() {
-        myLocationLabel.font = UIFont.boldSystemFont(ofSize: 23)
-        myLocationLabel.textColor = .white
-        myCurrentLocationLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        myCurrentLocationLabel.textColor = .white
-        weatherLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        weatherLabel.textColor = .white
-        temperatureLabel.font = UIFont.systemFont(ofSize: 40)
-        temperatureLabel.textColor = .white
-        highestTemperatureLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        highestTemperatureLabel.textColor = .white
-        lowestTemperatureLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        lowestTemperatureLabel.textColor = .white   
     }
 }
