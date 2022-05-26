@@ -13,6 +13,9 @@
 		B65360DB2834CD440057981C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65360DA2834CD440057981C /* MainViewController.swift */; };
 		B65360E02834CD450057981C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65360DF2834CD450057981C /* Assets.xcassets */; };
 		B65360E32834CD450057981C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65360E12834CD450057981C /* LaunchScreen.storyboard */; };
+		DDDE497C283E393E00E3E2B0 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */; };
+		DDF0AAA2283E6F8300C2BD14 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DDF0AAA1283E6F8300C2BD14 /* Then */; };
+		DDF0AAA9283F338400C2BD14 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0AAA8283F338400C2BD14 /* UILabel+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,8 @@
 		B65360DF2834CD450057981C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65360E22834CD450057981C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65360E42834CD450057981C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTableViewCell.swift; path = Weather_iPhone/Sources/WeatherTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		DDF0AAA8283F338400C2BD14 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA330249ACD6C6F067A5A99 /* Pods_Weather_iPhone.framework in Frameworks */,
+				DDF0AAA2283E6F8300C2BD14 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,7 @@
 		B65360EA2834CD500057981C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DDF0AAA7283F336E00C2BD14 /* Utils */,
 				B661FEB2283E279B0054A26D /* View */,
 				B661FEB1283E27900054A26D /* Controller */,
 			);
@@ -124,8 +131,17 @@
 		B661FEB2283E279B0054A26D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DDF0AAA7283F336E00C2BD14 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DDF0AAA8283F338400C2BD14 /* UILabel+Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +162,9 @@
 			dependencies = (
 			);
 			name = Weather_iPhone;
+			packageProductDependencies = (
+				DDF0AAA1283E6F8300C2BD14 /* Then */,
+			);
 			productName = Weather_iPhone;
 			productReference = B65360D32834CD440057981C /* Weather_iPhone.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +193,9 @@
 				Base,
 			);
 			mainGroup = B65360CA2834CD440057981C;
+			packageReferences = (
+				DDF0AAA0283E6F8300C2BD14 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = B65360D42834CD440057981C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDE497C283E393E00E3E2B0 /* WeatherTableViewCell.swift in Sources */,
+				DDF0AAA9283F338400C2BD14 /* UILabel+Extensions.swift in Sources */,
 				B65360DB2834CD440057981C /* MainViewController.swift in Sources */,
 				B65360D72834CD440057981C /* AppDelegate.swift in Sources */,
 				B65360D92834CD440057981C /* SceneDelegate.swift in Sources */,
@@ -456,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDF0AAA0283E6F8300C2BD14 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDF0AAA1283E6F8300C2BD14 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDF0AAA0283E6F8300C2BD14 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B65360CB2834CD440057981C /* Project object */;
 }

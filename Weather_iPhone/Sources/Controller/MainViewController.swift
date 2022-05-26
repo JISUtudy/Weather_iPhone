@@ -14,7 +14,11 @@ class MainViewController: UIViewController {
     
     private lazy var weatherTableView: UITableView = {
         let tv = UITableView()
-        tv.backgroundColor = .darkGray
+        tv.backgroundColor = .clear
+        tv.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        tv.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        tv.showsVerticalScrollIndicator = false
+        tv.rowHeight = 130
         return tv
     }()
     
@@ -22,7 +26,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .clear
         
         configureNav()
         configureUI()
@@ -45,7 +49,7 @@ class MainViewController: UIViewController {
         view.addSubview(weatherTableView)
         
         weatherTableView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(24)
         }
     }
@@ -68,18 +72,18 @@ class MainViewController: UIViewController {
     
 }
 
-
-
 // MARK: UITableViewDelegate
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
+
+        return cell
     }
     
     
