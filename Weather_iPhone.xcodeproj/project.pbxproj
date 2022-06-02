@@ -30,7 +30,7 @@
 		B65360DF2834CD450057981C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65360E22834CD450057981C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65360E42834CD450057981C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTableViewCell.swift; path = Weather_iPhone/Sources/WeatherTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTableViewCell.swift; path = Weather_iPhone/Sources/View/WeatherTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		DDE9967F2841329D00393550 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		DDF0AAA8283F338400C2BD14 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,8 +96,8 @@
 		B65360EA2834CD500057981C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DDBF26662848D12C00E06329 /* View */,
 				DDF0AAA7283F336E00C2BD14 /* Utils */,
-				B661FEB2283E279B0054A26D /* View */,
 				B661FEB1283E27900054A26D /* Controller */,
 			);
 			path = Sources;
@@ -130,7 +130,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		B661FEB2283E279B0054A26D /* View */ = {
+		DDBF26662848D12C00E06329 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DDDE497B283E393E00E3E2B0 /* WeatherTableViewCell.swift */,
