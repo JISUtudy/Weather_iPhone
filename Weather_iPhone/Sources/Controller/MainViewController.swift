@@ -37,13 +37,13 @@ class MainViewController: UIViewController {
         return ftWeatherDataBtn
     }()
     
-    lazy var footerFirstLabelBtn: UIButton = {
-        let ftFirstLabelBtn = UIButton(frame: footerView.bounds)
-        ftFirstLabelBtn.setBtnFontColor(text: "및", font: .systemFont(ofSize: 12), color: .white)
-        footerView.addSubview(ftFirstLabelBtn)
-        return ftFirstLabelBtn
+    lazy var footerFirstLabel: UILabel = {
+        let ftFirstLabel = UILabel(frame: footerView.bounds)
+        ftFirstLabel.setFontColor(text: " 및 ", font: .systemFont(ofSize: 12), color: .white)
+        footerView.addSubview(ftFirstLabel)
+        return ftFirstLabel
     }()
-    
+
     lazy var footerMapDataBtn: UIButton = {
         let ftMapDataBtn = UIButton(frame: footerView.bounds)
         ftMapDataBtn.setBtnFontColor(text: "지도 데이터", font: .systemFont(ofSize: 12), color: .white)
@@ -53,19 +53,27 @@ class MainViewController: UIViewController {
         return ftMapDataBtn
     }()
     
-    lazy var footerLastLabelBtn: UIButton = {
-        let ftLastLabelBtn = UIButton(frame: footerView.bounds)
-        ftLastLabelBtn.setBtnFontColor(text: "에 관하여 더 알아보기", font: .systemFont(ofSize: 12), color: .white)
-        footerView.addSubview(ftLastLabelBtn)
-        return ftLastLabelBtn
+    lazy var footerLastLabel: UILabel = {
+        let ftLastLabel = UILabel(frame: footerView.bounds)
+        ftLastLabel.setFontColor(text: "에 관하여 더 알아보기", font: .systemFont(ofSize: 12), color: .white)
+        footerView.addSubview(ftLastLabel)
+        return ftLastLabel
     }()
-    
+
     lazy var footerImageBtn: UIButton = {
         let ftImageBtn = UIButton(frame: footerView.bounds)
         ftImageBtn.setImage(UIImage(named: "weather_icon"), for: .normal)
         ftImageBtn.addTarget(self, action: #selector(weatherImage), for: .touchUpInside)
         footerView.addSubview(ftImageBtn)
         return ftImageBtn
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [footerWeatherDataBtn,footerFirstLabel,footerMapDataBtn,footerLastLabel])
+        footerView.addSubview(stackView)
+        stackView.axis = .horizontal
+        stackView.spacing = 0
+        return stackView
     }()
     
     
@@ -125,26 +133,15 @@ class MainViewController: UIViewController {
     }
     
     private func autoLayout() {
-        footerWeatherDataBtn.snp.makeConstraints {
-            $0.top.equalTo(footerView.snp.top)
-            $0.leading.equalTo(footerView.snp.leading).offset(70)
-        }
-        footerFirstLabelBtn.snp.makeConstraints {
-            $0.left.equalTo(footerWeatherDataBtn.snp.right).offset(-5)
-            $0.top.equalTo(footerWeatherDataBtn.snp.top)
-        }
-        footerMapDataBtn.snp.makeConstraints {
-            $0.left.equalTo(footerFirstLabelBtn.snp.right).offset(-5)
-            $0.top.equalTo(footerWeatherDataBtn.snp.top)
-        }
-        footerLastLabelBtn.snp.makeConstraints {
-            $0.left.equalTo(footerMapDataBtn.snp.right)
-            $0.top.equalTo(footerWeatherDataBtn.snp.top)
-        }
-        footerImageBtn.snp.makeConstraints {
-            $0.top.equalTo(footerWeatherDataBtn.snp.top).offset(35)
-            $0.size.equalTo(CGSize(width: 30, height: 30))
+        stackView.snp.makeConstraints {
+            $0.top.equalTo(footerView.snp.top).offset(5)
             $0.centerX.equalTo(footerView.snp.centerX)
+        }
+        
+        footerImageBtn.snp.makeConstraints {
+            $0.top.equalTo(stackView.snp.top).offset(35)
+            $0.size.equalTo(CGSize(width: 30, height: 30))
+            $0.centerX.equalTo(stackView.snp.centerX)
         }
     }
 }
