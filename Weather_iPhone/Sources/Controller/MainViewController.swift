@@ -128,6 +128,7 @@ class MainViewController: UIViewController {
         searchController.searchBar.placeholder = "도시 또는 공항 검색"
         searchController.obscuresBackgroundDuringPresentation = true
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(handleMenu))
     }
@@ -150,7 +151,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
