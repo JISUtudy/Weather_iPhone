@@ -55,8 +55,8 @@ class WeatherTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addContentView()
-        autoLayout()
+        configureCell()
+
     }
     
     // Inside UITableViewCell subclass
@@ -78,35 +78,37 @@ class WeatherTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     
-    private func addContentView() {
+    private func configureCell() {
         contentView.addSubview(myLocationLabel)
-        contentView.addSubview(myCurrentLocationLabel)
-        contentView.addSubview(weatherLabel)
-        contentView.addSubview(temperatureLabel)
-        contentView.addSubview(highestTemperatureLabel)
-        contentView.addSubview(lowestTemperatureLabel)
-    }
-    
-    private func autoLayout() {
         myLocationLabel.snp.makeConstraints {
             $0.leading.top.equalTo(20)
         }
+        
+        contentView.addSubview(myCurrentLocationLabel)
         myCurrentLocationLabel.snp.makeConstraints {
             $0.top.equalTo(myLocationLabel.snp.bottom).offset(2)
             $0.leading.equalTo(myLocationLabel.snp.leading)
         }
+        
+        contentView.addSubview(weatherLabel)
         weatherLabel.snp.makeConstraints {
             $0.bottom.equalTo(-20)
             $0.leading.equalTo(myCurrentLocationLabel.snp.leading)
         }
+        
+        contentView.addSubview(temperatureLabel)
         temperatureLabel.snp.makeConstraints {
             $0.top.equalTo(myLocationLabel.snp.top)
             $0.trailing.equalTo(-20)
         }
+        
+        contentView.addSubview(lowestTemperatureLabel)
         lowestTemperatureLabel.snp.makeConstraints {
             $0.bottom.equalTo(-20)
             $0.trailing.equalTo(temperatureLabel.snp.trailing)
         }
+        
+        contentView.addSubview(highestTemperatureLabel)
         highestTemperatureLabel.snp.makeConstraints {
             $0.right.equalTo(lowestTemperatureLabel.snp.left).offset(-5)
             $0.bottom.equalTo(lowestTemperatureLabel.snp.bottom)

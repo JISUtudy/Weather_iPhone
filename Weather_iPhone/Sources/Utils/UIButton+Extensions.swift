@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIButton {
-    // 버튼에 밑줄
+    /// 버튼에 밑줄
     func setUnderline() {
         guard let title = title(for: .normal) else { return }
         let attributedString = NSMutableAttributedString(string: title)

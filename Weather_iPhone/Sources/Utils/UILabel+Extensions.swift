@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    // color와 font 둘 다 변경하는 Extension
+    /// color와 font 둘 다 변경하는 Extension
     func setFontColor(text: String, font: UIFont, color: UIColor) {
         self.text = text
         self.font = font
