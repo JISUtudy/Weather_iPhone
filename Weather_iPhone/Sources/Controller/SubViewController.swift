@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class SubViewController: UIViewController {
 
@@ -14,8 +13,7 @@ class SubViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .green
-        navigationController?.isNavigationBarHidden = true
+        self.view.backgroundColor = .green
+        self.navigationController?.isNavigationBarHidden = true
     }
 }
