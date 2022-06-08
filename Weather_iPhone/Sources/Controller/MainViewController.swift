@@ -161,8 +161,5 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let vc = SubViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+    
 }
