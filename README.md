@@ -18,12 +18,11 @@
 <br>
 
 # 📚 To Do List
-> ~ 5/31(UI 구성)
+> 공통사항: Then 코드 리펙토링
 ### 👩🏻‍💻 수정 
-    • TableView Cell
-    • TableView Footer Cell
+    • Cell 클릭시 넘어가는 Collection View 구현하기
+        • 각각 View Controller 연결시키기   
 
 ### 🧑🏻‍💻 지석 
     • UINavigation Right Button
-    • Text View
-    • TableView Configure
+        • UIMenu 넣어주기
